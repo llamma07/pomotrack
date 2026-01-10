@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Manrope:wght@400;500;700&display=swap');
+
+.pacifico {
+  font-family: "Pacifico", cursive;
+}
+
+.manrope {
+  font-family: "Manrope", sans-serif;
+}
+
+/* Focus */
+*:focus {
+  outline: none;
+}
+
+*:focus-visible {
+  outline: 2px solid #B5B5B5;
+  outline-offset: 2px;
+}
+
+/* Help text - Updated to work for both single and cycle timers */
+.text-help {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 300ms ease-in-out, visibility 0s 300ms;
+}
+
+/* Single timer help text */
+#timerDisplay:hover + .text-help,
+#timerDisplay:focus + .text-help {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 300ms ease-in-out, visibility 0s 0s;
+}
+
+/* Cycle mode help texts */
+#focusTimer:hover ~ .focus-help,
+#focusTimer:focus ~ .focus-help,
+#breakTimer:hover ~ .break-help,
+#breakTimer:focus ~ .break-help {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 300ms ease-in-out, visibility 0s 0s;
+}
+
+.text-help.error-visible {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: none;
+}
+
+/* Buttons */
+.pmo-btn {
+  padding: 1rem 3rem;
+  width: 160px;
+  text-align: center;
+  border-radius: 30px;
+  cursor: pointer;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease;
+}
+
+/* Light mode (default) */
+.pmo-btn {
+  border: 2px solid black;
+  background-color: #F8F3F3;
+  box-shadow: 5px 4px 4px 2px rgba(0,0,0,0.25);
+}
+
+.pmo-btn:hover,
+.pmo-btn.active {
+  background-color: #B5B5B5;
+  font-weight: 700;
+}
+
+/* Cycle controls styling */
+#decreaseCycle,
+#increaseCycle {
+  cursor: pointer;
+}
+
+#decreaseCycle:disabled,
+#increaseCycle:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+#cyclesInput:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #050505;
+  color: white;
+}
+
+body.dark-mode .toggle-modes {
+  background-color: rgba(71, 70, 70, 0.53);
+}
+
+body.dark-mode .light-mode img,
+body.dark-mode .dark-mode img {
+  filter: invert(1);
+}
+
+body.dark-mode .light-mode:hover img,
+body.dark-mode .dark-mode:hover img {
+  filter: invert(0);
+}
+
+body.dark-mode .light-mode:hover,
+body.dark-mode .dark-mode:hover {
+  background-color: white;
+}
+
+body.dark-mode .pmo-btn {
+  border: 2px solid white;
+  background-color: rgba(71, 70, 70, 0.53);
+  color: white;
+  box-shadow: 5px 4px 4px 2px rgba(165,165,165,0.45);
+}
+
+body.dark-mode .pmo-btn:hover,
+body.dark-mode .pmo-btn.active {
+  background-color: rgba(248,243,243,1);
+  color: black;
+  font-weight: 700;
+}
+
+body.dark-mode #startButton {
+  border: 2px solid white;
+  background-color: rgba(71, 70, 70, 0.53);
+  color: white;
+  box-shadow: 5px 4px 4px 2px rgba(165,165,165,0.45);
+}
+
+body.dark-mode #startButton:hover {
+  background-color: rgba(248,243,243,1);
+  color: black;
+  font-weight: 700;
+}
+
+body.dark-mode .reset img,
+body.dark-mode .settings img {
+  filter: invert(100%);
+}
