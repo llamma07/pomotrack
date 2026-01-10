@@ -34,7 +34,7 @@ const cycleMode = {
     const cycleContainer = document.createElement('div');
     cycleContainer.className = 'cycle-container';
     cycleContainer.innerHTML = `
-      <div class="cycle-timers flex justify-center gap-32 mt-16">
+      <div class="cycle-timers flex justify-center gap-32 mt-6">
         <div class="focus-timer-section flex flex-col items-center">
           <label class="text-lg font-medium mb-4">Focus</label>
           <div contenteditable="true" id="focusTimer" class="timer-display flex justify-center items-center text-[120px] manrope">${this.savedFocusTime}</div>
@@ -52,7 +52,7 @@ const cycleMode = {
         <input type="text" id="cyclesInput" value="4" class="w-12 text-center text-lg font-medium border-2 rounded-lg" readonly>
         <button id="increaseCycle" class="flex items-center justify-center w-8 h-8 border-2 rounded-full hover:bg-[#B5B5B5] transition">+</button>
       </div>
-      <div class="cycle-progress mt-6 mb-20 text-center text-lg font-medium">
+      <div class="cycle-progress mt-6 text-center text-lg font-medium">
         <span id="currentCycleDisplay">Cycle 1 of 4 - Focus</span>
       </div>
     `;
