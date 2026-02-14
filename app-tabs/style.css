@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Manrope:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Manrope:wght@400;500;700&display=swap");
 
 .pacifico {
   font-family: "Pacifico", cursive;
@@ -8,13 +8,18 @@
   font-family: "Manrope", sans-serif;
 }
 
+.timer-display{
+  width: 340px;
+  text-align: center;
+}
+
 /* Focus */
 *:focus {
   outline: none;
 }
 
 *:focus-visible {
-  outline: 2px solid #B5B5B5;
+  outline: 2px solid #b5b5b5;
   outline-offset: 2px;
 }
 
@@ -22,7 +27,28 @@
 .text-help {
   visibility: hidden;
   opacity: 0;
-  transition: opacity 300ms ease-in-out, visibility 0s 300ms;
+  transition:
+    opacity 300ms ease-in-out,
+    visibility 0s 300ms;
+  min-height: 1.5em;
+  line-height: 1.5em;
+  margin-top: 3px;
+}
+
+/* Fade out transition - when opacity goes to 0, visibility waits for transition to complete */
+.text-help.fading {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+
+/* Keep space even when empty */
+.text-help:empty {
+  visibility: hidden;
+}
+
+.text-help:not(:empty) {
+  visibility: visible;
 }
 
 /* Single timer help text */
@@ -30,7 +56,9 @@
 #timerDisplay:focus + .text-help {
   visibility: visible;
   opacity: 1;
-  transition: opacity 300ms ease-in-out, visibility 0s 0s;
+  transition:
+    opacity 300ms ease-in-out,
+    visibility 0s 0s;
 }
 
 /* Cycle mode help texts */
@@ -40,7 +68,9 @@
 #breakTimer:focus ~ .break-help {
   visibility: visible;
   opacity: 1;
-  transition: opacity 300ms ease-in-out, visibility 0s 0s;
+  transition:
+    opacity 300ms ease-in-out,
+    visibility 0s 0s;
 }
 
 .text-help.error-visible {
@@ -66,13 +96,13 @@
 /* Light mode (default) */
 .pmo-btn {
   border: 2px solid black;
-  background-color: #F8F3F3;
-  box-shadow: 5px 4px 4px 2px rgba(0,0,0,0.25);
+  background-color: #f8f3f3;
+  box-shadow: 5px 4px 4px 2px rgba(0, 0, 0, 0.25);
 }
 
 .pmo-btn:hover,
 .pmo-btn.active {
-  background-color: #B5B5B5;
+  background-color: #b5b5b5;
   font-weight: 700;
 }
 
@@ -122,12 +152,12 @@ body.dark-mode .pmo-btn {
   border: 2px solid white;
   background-color: rgba(71, 70, 70, 0.53);
   color: white;
-  box-shadow: 5px 4px 4px 2px rgba(165,165,165,0.45);
+  box-shadow: 5px 4px 4px 2px rgba(165, 165, 165, 0.45);
 }
 
 body.dark-mode .pmo-btn:hover,
 body.dark-mode .pmo-btn.active {
-  background-color: rgba(248,243,243,1);
+  background-color: rgba(248, 243, 243, 1);
   color: black;
   font-weight: 700;
 }
@@ -136,11 +166,11 @@ body.dark-mode #startButton {
   border: 2px solid white;
   background-color: rgba(71, 70, 70, 0.53);
   color: white;
-  box-shadow: 5px 4px 4px 2px rgba(165,165,165,0.45);
+  box-shadow: 5px 4px 4px 2px rgba(165, 165, 165, 0.45);
 }
 
 body.dark-mode #startButton:hover {
-  background-color: rgba(248,243,243,1);
+  background-color: rgba(248, 243, 243, 1);
   color: black;
   font-weight: 700;
 }
@@ -149,3 +179,20 @@ body.dark-mode .reset img,
 body.dark-mode .settings img {
   filter: invert(100%);
 }
+
+body.dark-mode #increaseCycle,
+body.dark-mode #decreaseCycle {
+  background-color: rgba(71, 70, 70, 0.53);
+  color: #f8f3f3;
+}
+
+body.dark-mode #increaseCycle:hover,
+body.dark-mode #decreaseCycle:hover {
+  background-color: #ffffff ; 
+  color: rgba(71, 70, 70, 0.53);           
+}
+
+body.dark-mode .text-help {
+  color: #a7a7a7; /* or another subtle gray */
+}
+
