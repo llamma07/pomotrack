@@ -8,9 +8,274 @@
   font-family: "Manrope", sans-serif;
 }
 
-.timer-display{
+.timer-display {
   width: 340px;
   text-align: center;
+  white-space: nowrap;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive mobile adjustments */
+@media (max-width: 768px) {
+  /* Override nav padding from Tailwind */
+  nav {
+    padding: 0.75rem 1rem !important;
+  }
+
+  /* Scale down logo */
+  .pacifico {
+    font-size: 1.75rem !important;
+  }
+
+  .timer-display {
+    width: auto !important;
+    font-size: 60px !important;
+    margin-top: 5rem !important;
+    white-space: nowrap !important;
+    padding: 0 1rem;
+    display: block !important;
+  }
+
+  .pomo-options {
+    gap: 1rem !important;
+    margin-top: 2rem !important;
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+
+  .pmo-btn {
+    padding: 0.75rem 1.5rem;
+    width: 120px;
+    font-size: 0.9rem;
+  }
+
+  .options {
+    gap: 1rem !important;
+    margin-top: 1.5rem !important;
+    padding: 0 1rem;
+  }
+
+  #startButton {
+    width: 140px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .reset,
+  .settings {
+    width: 10px;
+    height: 10px;
+  }
+
+  .toggle-modes {
+    width: auto;
+    padding: 0.5rem;
+  }
+
+  .light-mode,
+  .dark-mode {
+    width: 50px;
+    height: 10px;
+    padding: 0.5rem;
+  }
+
+  .text-help,
+  .text-help-cycle {
+    font-size: 0.75rem;
+  }
+
+  .footer {
+    bottom: 1rem !important;
+    gap: 1rem !important;
+    font-size: 0.85rem;
+  }
+
+  .main-content {
+    padding-bottom: 4rem;
+  }
+
+  /* Make touch targets larger on mobile */
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Ensure proper spacing below footer */
+  body {
+    padding-bottom: 3rem;
+  }
+
+  /* Cycle mode mobile adjustments */
+  .cycle-timers {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    margin-top: 2rem !important;
+    padding: 0 1rem;
+  }
+
+  .cycle-timers > div {
+    width: 100%;
+  }
+
+  #focusTimer,
+  #breakTimer {
+    font-size: 60px !important;
+    width: auto !important;
+    white-space: nowrap !important;
+    display: block !important;
+    text-align: center;
+  }
+
+  .cycle-timers label {
+    font-size: 1rem !important;
+  }
+
+  .cycle-progress {
+    margin-top: 1rem !important;
+    font-size: 0.9rem !important;
+    padding: 0 1rem;
+  }
+
+  .cycle-controls {
+    margin-top: 1.5rem !important;
+    font-size: 0.9rem !important;
+    padding: 0 1rem;
+  }
+
+  #cyclesInput {
+    width: 3rem;
+    font-size: 1rem;
+  }
+
+  #decreaseCycle,
+  #increaseCycle {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    font-size: 1.25rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 0.5rem 0.75rem !important;
+  }
+
+  .pacifico {
+    font-size: 1.5rem !important;
+  }
+
+  .timer-display {
+    font-size: 50px !important;
+    margin-top: 4rem !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+  .pomo-options {
+    gap: 0.75rem !important;
+    margin-top: 1.5rem !important;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .pmo-btn {
+    padding: 0.6rem 1rem;
+    width: 100px;
+    font-size: 0.8rem;
+  }
+
+  .options {
+    gap: 0.75rem !important;
+  }
+
+  #startButton {
+    width: 120px;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .text-help,
+  .text-help-cycle {
+    font-size: 0.7rem;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  main {
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Cycle mode extra small screen adjustments */
+  .cycle-timers {
+    gap: 1.5rem !important;
+    margin-top: 1.5rem !important;
+  }
+
+  #focusTimer,
+  #breakTimer {
+    font-size: 50px !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+  .cycle-timers label {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .cycle-progress {
+    font-size: 0.85rem !important;
+    margin-top: 0.75rem !important;
+  }
+
+  .cycle-controls {
+    margin-top: 1rem !important;
+    font-size: 0.85rem !important;
+    gap: 0.75rem !important;
+  }
+
+  #cyclesInput {
+    width: 2.5rem;
+    font-size: 0.9rem;
+  }
+
+  #decreaseCycle,
+  #increaseCycle {
+    width: 2rem !important;
+    height: 2rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Extra small screens - even more compact */
+@media (max-width: 375px) {
+  .timer-display {
+    font-size: 45px !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+  #focusTimer,
+  #breakTimer {
+    font-size: 45px !important;
+    white-space: nowrap !important;
+    width: auto !important;
+    display: block !important;
+  }
+
+  .pomo-btn {
+    padding: 0.5rem 0.75rem;
+    width: 90px;
+    font-size: 0.75rem;
+  }
 }
 
 /* Focus */
@@ -24,7 +289,8 @@
 }
 
 /* Help text - Updated to work for both single and cycle timers */
-.text-help {
+.text-help,
+.text-help-cycle {
   visibility: hidden;
   opacity: 0;
   transition:
@@ -36,18 +302,21 @@
 }
 
 /* Fade out transition - when opacity goes to 0, visibility waits for transition to complete */
-.text-help.fading {
+.text-help.fading,
+.text-help-cycle.fading {
   visibility: visible;
   opacity: 1;
   transition: opacity 300ms ease-in-out;
 }
 
 /* Keep space even when empty */
-.text-help:empty {
+.text-help:empty,
+.text-help-cycle:empty {
   visibility: hidden;
 }
 
-.text-help:not(:empty) {
+.text-help:not(:empty),
+.text-help-cycle:not(:empty) {
   visibility: visible;
 }
 
@@ -73,7 +342,8 @@
     visibility 0s 0s;
 }
 
-.text-help.error-visible {
+.text-help.error-visible,
+.text-help-cycle.error-visible {
   visibility: visible !important;
   opacity: 1 !important;
   transition: none;
@@ -188,11 +458,11 @@ body.dark-mode #decreaseCycle {
 
 body.dark-mode #increaseCycle:hover,
 body.dark-mode #decreaseCycle:hover {
-  background-color: #ffffff ; 
-  color: rgba(71, 70, 70, 0.53);           
+  background-color: #ffffff;
+  color: rgba(71, 70, 70, 0.53);
 }
 
-body.dark-mode .text-help {
-  color: #a7a7a7; /* or another subtle gray */
+body.dark-mode .text-help,
+body.dark-mode .text-help-cycle {
+  color: #a7a7a7;
 }
-
